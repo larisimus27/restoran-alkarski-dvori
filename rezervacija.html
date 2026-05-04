@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rezervacija – Alkarski dvori</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAVIGACIJA -->
+  <header>
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">� Alkarski <span>dvori</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Otvori izbornik">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Početna</a></li>
+        <li><a href="jelovnik.html">Jelovnik</a></li>
+        <li><a href="recepti.html">Recepti</a></li>
+        <li><a href="rezervacija.html" class="active">Rezervacija</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="rezervacija-hero page-hero">
+    <div class="container">
+      <h1>Rezervacija stola</h1>
+      <p>Rezervirajte svoj stol na vrijeme i uživajte u vrhunskoj hrani i ugodnoj atmosferi</p>
+    </div>
+  </section>
+
+  <!-- REZERVACIJA SADRŽAJ -->
+  <section class="rezervacija-section">
+    <div class="container">
+      <div class="rezervacija-grid">
+
+        <!-- LIJEVO – informacije -->
+        <div class="rez-info">
+          <h3>Dobrodošli za naš stol</h3>
+          <p>
+            Alkarski dvori raspolaže s <strong>50 mjesta unutra</strong> i
+            <strong>20 mjesta na terasi</strong>. Za veće grupe i posebne prilike,
+            svakako nas kontaktirajte telefonski.
+          </p>
+          <p>
+            Molimo unesite točne podatke kako bismo vam osigurali najbolje iskustvo.
+            Vaša rezervacija bit će potvrđena SMS-om i e-mailom u roku 2 sata.
+          </p>
+
+          <div class="rez-note">
+            📌 <strong>Napomena:</strong> Molimo unesite točne podatke kako
+            bismo vam osigurali najbolje iskustvo. Za peku obavezna je
+            rezervacija <strong>najmanje 24 sata unaprijed</strong>.
+          </div>
+
+          <div class="info-box" style="margin-top:1.8rem;">
+            <h3 style="font-size:1.15rem;">🕐 Radno vrijeme</h3>
+            <div class="hours-row">
+              <span class="days">Pon – Pet</span>
+              <span class="time">11:00 – 23:00</span>
+            </div>
+            <div class="hours-row">
+              <span class="days">Subota</span>
+              <span class="time">11:00 – 24:00</span>
+            </div>
+            <div class="hours-row">
+              <span class="days">Nedjelja</span>
+              <span class="time">12:00 – 22:00</span>
+            </div>
+          </div>
+
+          <div style="margin-top:1.8rem;display:flex;flex-direction:column;gap:0.75rem;">
+            <div style="display:flex;align-items:center;gap:0.75rem;font-size:0.95rem;">
+              <span style="font-size:1.3rem;">📞</span>
+              <div>
+                <strong style="display:block;color:var(--clr-navy);">Telefon</strong>
+                <span style="color:var(--clr-grey);">+385 21 826 100</span>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:0.75rem;font-size:0.95rem;">
+              <span style="font-size:1.3rem;">✉️</span>
+              <div>
+                <strong style="display:block;color:var(--clr-navy);">E-mail</strong>
+                <span style="color:var(--clr-grey);">rezervacije@alkarski-dvori.hr</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DESNO – forma -->
+        <div class="form-card" id="form-wrapper">
+
+          <!-- Forma -->
+          <div id="form-content">
+            <h2 class="form-title">Popunite obrazac</h2>
+
+            <form id="rezervacija-form" novalidate>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="ime">Ime <span class="required-star">*</span></label>
+                  <input type="text" id="ime" name="ime"
+                    placeholder="npr. Ante" autocomplete="given-name" />
+                  <span class="error-msg" id="ime-err">Unesite ime (min. 2 znaka).</span>
+                </div>
+                <div class="form-group">
+                  <label for="prezime">Prezime <span class="required-star">*</span></label>
+                  <input type="text" id="prezime" name="prezime"
+                    placeholder="npr. Babić" autocomplete="family-name" />
+                  <span class="error-msg" id="prezime-err">Unesite prezime (min. 2 znaka).</span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email">E-mail <span class="required-star">*</span></label>
+                  <input type="email" id="email" name="email"
+                    placeholder="ante@mail.hr" autocomplete="email" />
+                  <span class="error-msg" id="email-err">Unesite ispravnu e-mail adresu.</span>
+                </div>
+                <div class="form-group">
+                  <label for="telefon">Telefon <span class="required-star">*</span></label>
+                  <input type="tel" id="telefon" name="telefon"
+                    placeholder="+385 91 123 4567" autocomplete="tel" />
+                  <span class="error-msg" id="telefon-err">Unesite ispravan broj (min. 9 znamenki).</span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="datum">Datum <span class="required-star">*</span></label>
+                  <input type="date" id="datum" name="datum" />
+                  <span class="error-msg" id="datum-err">Odaberite datum (ne u prošlosti).</span>
+                </div>
+                <div class="form-group">
+                  <label for="vrijeme">Vrijeme <span class="required-star">*</span></label>
+                  <select id="vrijeme" name="vrijeme">
+                    <option value="">— Odaberite —</option>
+                    <option value="11:00">11:00</option>
+                    <option value="12:00">12:00</option>
+                    <option value="13:00">13:00</option>
+                    <option value="14:00">14:00</option>
+                    <option value="18:00">18:00</option>
+                    <option value="19:00">19:00</option>
+                    <option value="20:00">20:00</option>
+                    <option value="21:00">21:00</option>
+                    <option value="22:00">22:00</option>
+                  </select>
+                  <span class="error-msg" id="vrijeme-err">Odaberite željeno vrijeme.</span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="osobe">Broj osoba <span class="required-star">*</span></label>
+                  <select id="osobe" name="osobe">
+                    <option value="">— Odaberite —</option>
+                    <option value="1">1 osoba</option>
+                    <option value="2">2 osobe</option>
+                    <option value="3">3 osobe</option>
+                    <option value="4">4 osobe</option>
+                    <option value="5">5 osoba</option>
+                    <option value="6">6 osoba</option>
+                    <option value="7">7 osoba</option>
+                    <option value="8">8 osoba</option>
+                    <option value="9+">9+ osoba (kontaktirajte nas)</option>
+                  </select>
+                  <span class="error-msg" id="osobe-err">Odaberite broj osoba.</span>
+                </div>
+                <div class="form-group">
+                  <label for="smjestaj">Smještaj</label>
+                  <select id="smjestaj" name="smjestaj">
+                    <option value="svejedno">Svejedno</option>
+                    <option value="unutra">Unutra</option>
+                    <option value="terasa">Terasa</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="napomene">Napomene / posebni zahtjevi</label>
+                <textarea id="napomene" name="napomene"
+                  placeholder="Alergije, prehrambene preferencije, peka (24h unaprijed), obljetnica..."></textarea>
+                <span class="error-msg" id="napomene-err">Napomena ne smije biti dulja od 500 znakova.</span>
+              </div>
+
+              <div class="form-group" style="flex-direction:row;align-items:flex-start;gap:0.75rem;margin-bottom:1.5rem;">
+                <input type="checkbox" id="suglasnost" name="suglasnost"
+                  style="width:18px;height:18px;margin-top:2px;flex-shrink:0;accent-color:var(--clr-terra);" />
+                <div>
+                  <label for="suglasnost" style="font-size:0.9rem;font-weight:400;cursor:pointer;">
+                    Slažem se s <strong>uvjetima rezervacije</strong> i pohranom osobnih podataka u svrhu
+                    potvrde rezervacije. <span class="required-star">*</span>
+                  </label>
+                  <span class="error-msg" id="suglasnost-err" style="display:none;">Morate prihvatiti uvjete.</span>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary form-submit">
+                Pošalji rezervaciju ✉
+              </button>
+
+            </form>
+          </div><!-- /form-content -->
+
+          <!-- Uspješna poruka (skrivena initially) -->
+          <div class="success-overlay" id="success-overlay">
+            <div class="success-icon">🎉</div>
+            <h3>Rezervacija primljena!</h3>
+            <p>
+              Hvala vam, <strong id="success-name"></strong>!<br />
+              Potvrdimo vašu rezervaciju u roku 2 sata na e-mail i SMS.<br /><br />
+              Veselimo se vašem dolasku u <strong>Alkarske dvore</strong>.
+            </p>
+            <button class="btn btn-outline" id="nova-rezervacija"
+              style="margin-top:1.5rem;">
+              Nova rezervacija
+            </button>
+          </div>
+
+        </div><!-- /form-card -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>© 2026 <strong>Alkarski dvori</strong> · Sva prava pridržana</p>
+      <p style="margin-top:0.4rem;">Projektni zadatak · LTS Web tehnologije i analitika</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

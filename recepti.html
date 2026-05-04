@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recepti – Alkarski dvori</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAVIGACIJA -->
+  <header>
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">� Alkarski <span>dvori</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Otvori izbornik">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Početna</a></li>
+        <li><a href="jelovnik.html">Jelovnik</a></li>
+        <li><a href="recepti.html" class="active">Recepti</a></li>
+        <li><a href="rezervacija.html">Rezervacija</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="recepti-hero page-hero">
+    <div class="container">
+      <h1>Naši recepti</h1>
+      <p>Tajne sinjske kuhinje – sada i u vašoj kuhinji</p>
+    </div>
+  </section>
+
+  <!-- RECEPTI -->
+  <section class="recepti-list">
+    <div class="container">
+
+      <h2 class="section-title">Kuhajte s nama</h2>
+      <p class="section-subtitle">Kliknite na recept da otkrijete sastojke i korake pripreme</p>
+
+      <!-- Peka ispod peke -->
+      <article class="recept-card">
+        <div class="recept-header">
+          <img class="recept-img"
+            src="img/peka.jpg" />
+          <div class="recept-meta">
+            <span class="recept-tag">Meso – sinjski specijalitet</span>
+            <h2>Peka ispod peke</h2>
+            <div class="recept-info-row">
+              <div class="recept-info-item">⏱ <strong>2 h</strong>&nbsp;pečenje</div>
+              <div class="recept-info-item">🍽 <strong>4</strong>&nbsp;osobe</div>
+              <div class="recept-info-item">📊 <strong>Srednje</strong></div>
+            </div>
+            <p style="color:var(--clr-grey);font-size:0.95rem;margin-bottom:1rem;">
+              Jedno od najpoznatijih dalmatinskih jela koje se priprema na tradicionalan
+              način ispod željeznog poklopca (peke). Rezultat je sočno i aromatično
+              jelo koje se topi u ustima.
+            </p>
+            <button class="toggle-btn" data-target="recept-1">
+              Prikaži recept <span class="toggle-icon" aria-hidden="true">▼</span>
+            </button>
+          </div>
+        </div>
+        <div class="recept-details" id="recept-1">
+          <div class="recept-details-inner">
+            <div>
+              <p class="ingredients-title">🛒 Sastojci</p>
+              <ul class="ingredients-list">
+                <li>1 kg mesa (teletina ili janjetina)</li>
+                <li>1 kg krumpira</li>
+                <li>2 glavice luka</li>
+                <li>Maslinovo ulje</li>
+                <li>Sol, papar, ružmarin</li>
+              </ul>
+            </div>
+            <div>
+              <p class="steps-title">👨‍🍳 Priprema</p>
+              <ol class="steps-list">
+                <li><p>Meso narežite na veće komade i začinite solju, paprom i ružmarinom. Ostavite da se marinira barem 30 minuta.</p></li>
+                <li><p>Krumpir očistite i narežite na krupnije komade. Luk očistite i narežite na četverine. Sve složite u posudu za peku.</p></li>
+                <li><p>Sve sastojke obilno prelijte maslinovim uljem i još jednom začinite. Složite meso na vrh povrća.</p></li>
+                <li><p>Pokrijte pekom (željeznim poklopcem) i zapalite vatru. Posuđe stavite na žar, a žar nasipte i na vrh poklopca. Pecite oko 2 sata.</p></li>
+                <li><p>Povremeno provjerite jelo i okrenite meso. Kad je meso zlatno i mekano da se odvaja od kosti – jelo je gotovo. Poslužite odmah uz dobar kruh.</p></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+    <!-- CTA -->
+  <section class="cta-band">
+    <div class="container">
+      <h2>Zainteresirani za originale?</h2>
+      <p>Posjetite Alkarske dvore i doživite domaću kuhinju Sinja u pravom ambijentu.</p>
+      <a href="rezervacija.html" class="btn btn-primary">Rezervirajte stol</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>© 2026 <strong>Alkarski dvori</strong> · Sva prava pridržana</p>
+      <p style="margin-top:0.4rem;">Projektni zadatak · LTS Web tehnologije i analitika</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

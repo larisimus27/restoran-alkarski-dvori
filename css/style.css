@@ -1,0 +1,989 @@
+/* =============================================
+   ALKARSKI DVORI – Sinj — Glavni stylesheet
+   ============================================= */
+
+/* ---------- Reset & Box-sizing ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- Custom properties ---------- */
+:root {
+  --clr-terra:    #c0392b;
+  --clr-terra-dk: #96281b;
+  --clr-sand:     #f5ede0;
+  --clr-cream:    #fdf8f2;
+  --clr-olive:    #6b7c3a;
+  --clr-olive-lt: #8fa44d;
+  --clr-navy:     #1b2a3b;
+  --clr-grey:     #7f8c8d;
+  --clr-white:    #ffffff;
+  --clr-shadow:   rgba(27, 42, 59, 0.12);
+
+  --ff-serif:  'Playfair Display', Georgia, serif;
+  --ff-sans:   'Lato', 'Segoe UI', Arial, sans-serif;
+
+  --radius:    10px;
+  --transition: 0.28s ease;
+}
+
+/* ---------- Base ---------- */
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--ff-sans);
+  background: var(--clr-cream);
+  color: var(--clr-navy);
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img { display: block; max-width: 100%; }
+
+h1, h2, h3, h4 {
+  font-family: var(--ff-serif);
+  line-height: 1.2;
+}
+
+/* ---------- Utility ---------- */
+.container {
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  color: var(--clr-terra);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--clr-grey);
+  font-size: 1.05rem;
+  margin-bottom: 2.5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.9rem;
+  border-radius: 50px;
+  font-family: var(--ff-sans);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  border: none;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+
+.btn-primary {
+  background: var(--clr-terra);
+  color: var(--clr-white);
+}
+
+.btn-primary:hover {
+  background: var(--clr-terra-dk);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(192, 57, 43, 0.35);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--clr-terra);
+  border: 2px solid var(--clr-terra);
+}
+
+.btn-outline:hover {
+  background: var(--clr-terra);
+  color: var(--clr-white);
+  transform: translateY(-2px);
+}
+
+/* ---------- NAV ---------- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  background: var(--clr-navy);
+  box-shadow: 0 2px 14px rgba(0,0,0,0.18);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 0.85rem;
+}
+
+.nav-logo {
+  font-family: var(--ff-serif);
+  font-size: 1.5rem;
+  color: var(--clr-sand);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.nav-logo span { color: var(--clr-terra); }
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 0.25rem;
+}
+
+.nav-links a {
+  display: block;
+  padding: 0.45rem 1rem;
+  color: var(--clr-sand);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background var(--transition), color var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background: var(--clr-terra);
+  color: var(--clr-white);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: var(--clr-sand);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(27,42,59,0.82) 0%, rgba(192,57,43,0.55) 100%),
+    url('../img/hero-restoran.jpg') center/cover no-repeat;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+  padding-block: 5rem;
+}
+
+.hero-tag {
+  display: inline-block;
+  background: var(--clr-terra);
+  color: var(--clr-white);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.9rem;
+  border-radius: 4px;
+  margin-bottom: 1.2rem;
+}
+
+.hero-title {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  color: var(--clr-white);
+  margin-bottom: 1.2rem;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+
+.hero-desc {
+  font-size: 1.15rem;
+  color: rgba(255,255,255,0.88);
+  margin-bottom: 2rem;
+  max-width: 520px;
+}
+
+.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+/* ---------- FEATURES STRIP ---------- */
+.features {
+  background: var(--clr-sand);
+  padding-block: 3rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1.5rem;
+}
+
+.feature-card {
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  padding: 1.8rem 1.4rem;
+  text-align: center;
+  box-shadow: 0 4px 16px var(--clr-shadow);
+  transition: transform var(--transition);
+}
+
+.feature-card:hover { transform: translateY(-4px); }
+
+.feature-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.feature-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--clr-terra);
+}
+
+.feature-card p {
+  font-size: 0.9rem;
+  color: var(--clr-grey);
+}
+
+/* ---------- ABOUT SECTION ---------- */
+.about {
+  padding-block: 5rem;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-image {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 12px 36px var(--clr-shadow);
+  position: relative;
+}
+
+.about-image img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.about-image:hover img { transform: scale(1.04); }
+
+.about-badge {
+  position: absolute;
+  bottom: 1.4rem;
+  left: 1.4rem;
+  background: var(--clr-terra);
+  color: var(--clr-white);
+  border-radius: var(--radius);
+  padding: 0.9rem 1.3rem;
+  font-family: var(--ff-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.3;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+.about-badge small {
+  display: block;
+  font-family: var(--ff-sans);
+  font-size: 0.75rem;
+  font-weight: 400;
+  opacity: 0.85;
+}
+
+.about-text h2 {
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+  color: var(--clr-terra);
+  margin-bottom: 1.2rem;
+}
+
+.about-text p {
+  color: var(--clr-grey);
+  margin-bottom: 1rem;
+  font-size: 1.02rem;
+}
+
+.about-stats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.stat strong {
+  display: block;
+  font-family: var(--ff-serif);
+  font-size: 2rem;
+  color: var(--clr-terra);
+}
+
+.stat span { font-size: 0.88rem; color: var(--clr-grey); }
+
+/* ---------- FEATURED DISHES ---------- */
+.featured {
+  background: var(--clr-sand);
+  padding-block: 5rem;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.75rem;
+}
+
+/* ---------- CARD (reusable) ---------- */
+.card {
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 4px 20px var(--clr-shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(27,42,59,0.16);
+}
+
+.card-img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1.4rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.65rem;
+  border-radius: 4px;
+  margin-bottom: 0.7rem;
+}
+
+.badge-riba    { background: #d6eaf8; color: #1a5276; }
+.badge-meso    { background: #fde8e4; color: #922b21; }
+.badge-vegetar { background: #d5f5e3; color: #196f3d; }
+.badge-deserti { background: #fef9e7; color: #7d6608; }
+.badge-pica    { background: #eaf0fb; color: #1a3a6b; }
+
+.card-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+  color: var(--clr-navy);
+}
+
+.card-desc {
+  font-size: 0.92rem;
+  color: var(--clr-grey);
+  flex: 1;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid #eee;
+}
+
+.card-price {
+  font-family: var(--ff-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--clr-terra);
+}
+
+/* ---------- CTA BAND ---------- */
+.cta-band {
+  background: linear-gradient(135deg, var(--clr-navy) 0%, #2c3e50 100%);
+  padding-block: 4.5rem;
+  text-align: center;
+}
+
+.cta-band h2 {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  color: var(--clr-white);
+  margin-bottom: 0.8rem;
+}
+
+.cta-band p {
+  color: rgba(255,255,255,0.75);
+  max-width: 520px;
+  margin-inline: auto;
+  margin-bottom: 2rem;
+}
+
+/* ---------- RADNO VRIJEME & KONTAKT ---------- */
+.info-section {
+  padding-block: 5rem;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.info-box {
+  background: var(--clr-sand);
+  border-radius: var(--radius);
+  padding: 2rem;
+}
+
+.info-box h3 {
+  color: var(--clr-terra);
+  margin-bottom: 1.2rem;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  padding-block: 0.4rem;
+  border-bottom: 1px dashed #ddd;
+  font-size: 0.95rem;
+}
+
+.hours-row:last-child { border-bottom: none; }
+.hours-row .days { color: var(--clr-navy); font-weight: 600; }
+.hours-row .time { color: var(--clr-terra); }
+.hours-row .closed { color: var(--clr-grey); }
+
+.contact-list { list-style: none; }
+
+.contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding-block: 0.55rem;
+  font-size: 0.95rem;
+  color: var(--clr-navy);
+}
+
+.contact-icon { font-size: 1.1rem; flex-shrink: 0; }
+
+/* ---------- FOOTER ---------- */
+footer {
+  background: var(--clr-navy);
+  color: rgba(255,255,255,0.65);
+  padding-block: 2.5rem;
+  text-align: center;
+  font-size: 0.88rem;
+}
+
+footer strong { color: var(--clr-terra); }
+
+/* =============================================
+   JELOVNIK PAGE
+   ============================================= */
+
+.page-hero {
+  background:
+    linear-gradient(135deg, rgba(27,42,59,0.80) 0%, rgba(192,57,43,0.55) 100%),
+    url('../img/hero-jelovnik.jpg') center/cover no-repeat;
+  padding-block: 5rem;
+  text-align: center;
+  color: var(--clr-white);
+}
+
+.page-hero h1 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  margin-bottom: 0.6rem;
+}
+
+.page-hero p {
+  font-size: 1.1rem;
+  opacity: 0.85;
+}
+
+.filter-bar {
+  padding-block: 2rem;
+  background: var(--clr-sand);
+  position: sticky;
+  top: 60px;
+  z-index: 100;
+  box-shadow: 0 2px 8px var(--clr-shadow);
+}
+
+.filter-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filter-btn {
+  padding: 0.5rem 1.3rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border: 2px solid var(--clr-terra);
+  background: transparent;
+  color: var(--clr-terra);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--clr-terra);
+  color: var(--clr-white);
+}
+
+.filter-label {
+  font-weight: 700;
+  color: var(--clr-navy);
+  margin-right: 0.3rem;
+}
+
+.menu-section {
+  padding-block: 4rem;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.75rem;
+}
+
+.menu-item {
+  transition: opacity 0.35s, transform 0.35s;
+}
+
+.menu-item.hidden {
+  display: none;
+}
+
+.menu-item.fade-out {
+  opacity: 0;
+  transform: scale(0.96);
+}
+
+/* =============================================
+   RECEPTI PAGE
+   ============================================= */
+
+.recepti-hero {
+  background:
+    linear-gradient(135deg, rgba(27,42,59,0.80) 0%, rgba(107,124,58,0.55) 100%),
+    url('../img/hero-recepti.jpg') center/cover no-repeat;
+  padding-block: 5rem;
+  text-align: center;
+  color: var(--clr-white);
+}
+
+.recepti-list {
+  padding-block: 4rem;
+}
+
+.recept-card {
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 20px var(--clr-shadow);
+  margin-bottom: 2rem;
+  overflow: hidden;
+  transition: box-shadow var(--transition);
+}
+
+.recept-card:hover { box-shadow: 0 8px 32px rgba(27,42,59,0.16); }
+
+.recept-header {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+}
+
+.recept-img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.recept-meta {
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.recept-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.2rem 0.7rem;
+  border-radius: 4px;
+  margin-bottom: 0.8rem;
+  background: var(--clr-sand);
+  color: var(--clr-terra);
+}
+
+.recept-meta h2 {
+  font-size: 1.6rem;
+  color: var(--clr-navy);
+  margin-bottom: 0.6rem;
+}
+
+.recept-info-row {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.recept-info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.88rem;
+  color: var(--clr-grey);
+}
+
+.recept-info-item strong { color: var(--clr-navy); }
+
+.toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: 50px;
+  background: var(--clr-terra);
+  color: var(--clr-white);
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+  margin-top: 0.5rem;
+  align-self: flex-start;
+}
+
+.toggle-btn:hover {
+  background: var(--clr-terra-dk);
+  transform: translateY(-2px);
+}
+
+.toggle-icon { transition: transform 0.3s ease; }
+.toggle-icon.open { transform: rotate(180deg); }
+
+.recept-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.recept-details.expanded {
+  max-height: 1200px;
+}
+
+.recept-details-inner {
+  padding: 2rem;
+  border-top: 1px solid #eee;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2.5rem;
+}
+
+.ingredients-title, .steps-title {
+  font-family: var(--ff-serif);
+  font-size: 1.2rem;
+  color: var(--clr-terra);
+  margin-bottom: 1rem;
+}
+
+.ingredients-list {
+  list-style: none;
+}
+
+.ingredients-list li {
+  padding-block: 0.4rem;
+  border-bottom: 1px dashed #eee;
+  font-size: 0.93rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ingredients-list li::before {
+  content: '✦';
+  color: var(--clr-olive);
+  font-size: 0.7rem;
+  flex-shrink: 0;
+}
+
+.steps-list {
+  list-style: none;
+  counter-reset: steps;
+}
+
+.steps-list li {
+  counter-increment: steps;
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+  align-items: flex-start;
+}
+
+.steps-list li::before {
+  content: counter(steps);
+  background: var(--clr-terra);
+  color: var(--clr-white);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.steps-list li p {
+  padding-top: 0.3rem;
+  font-size: 0.93rem;
+  color: var(--clr-navy);
+  line-height: 1.6;
+}
+
+/* =============================================
+   REZERVACIJA PAGE
+   ============================================= */
+
+.rezervacija-hero {
+  background:
+    linear-gradient(135deg, rgba(27,42,59,0.82) 0%, rgba(192,57,43,0.55) 100%),
+    url('../img/hero-rezervacija.jpg') center/cover no-repeat;
+  padding-block: 5rem;
+  text-align: center;
+  color: var(--clr-white);
+}
+
+.rezervacija-section {
+  padding-block: 5rem;
+}
+
+.rezervacija-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.rez-info { padding-top: 1rem; }
+
+.rez-info h3 {
+  font-size: 1.5rem;
+  color: var(--clr-terra);
+  margin-bottom: 1.2rem;
+}
+
+.rez-info p {
+  font-size: 0.95rem;
+  color: var(--clr-grey);
+  margin-bottom: 1.5rem;
+  line-height: 1.7;
+}
+
+.rez-note {
+  background: var(--clr-sand);
+  border-left: 4px solid var(--clr-terra);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 1.1rem 1.4rem;
+  font-size: 0.92rem;
+  color: var(--clr-navy);
+}
+
+.form-card {
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  box-shadow: 0 8px 32px var(--clr-shadow);
+}
+
+.form-title {
+  font-size: 1.6rem;
+  color: var(--clr-terra);
+  margin-bottom: 1.8rem;
+  text-align: center;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.form-group {
+  margin-bottom: 1.4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 0.87rem;
+  font-weight: 700;
+  color: var(--clr-navy);
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.03em;
+}
+
+.form-group .required-star { color: var(--clr-terra); }
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.75rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-family: var(--ff-sans);
+  font-size: 0.95rem;
+  color: var(--clr-navy);
+  background: var(--clr-cream);
+  transition: border-color var(--transition), box-shadow var(--transition);
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--clr-terra);
+  box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.12);
+}
+
+.form-group input.valid { border-color: var(--clr-olive); }
+.form-group input.invalid,
+.form-group select.invalid,
+.form-group textarea.invalid {
+  border-color: var(--clr-terra);
+  background: #fff5f5;
+}
+
+.error-msg {
+  font-size: 0.8rem;
+  color: var(--clr-terra);
+  margin-top: 0.3rem;
+  min-height: 1.1em;
+  display: none;
+}
+
+.error-msg.visible { display: block; }
+
+.form-group textarea { resize: vertical; min-height: 110px; }
+
+.form-submit {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  font-size: 1.05rem;
+}
+
+/* Success overlay */
+.success-overlay {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem;
+}
+
+.success-overlay.visible { display: flex; }
+
+.success-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.success-overlay h3 {
+  font-size: 1.6rem;
+  color: var(--clr-olive);
+  margin-bottom: 0.6rem;
+}
+
+.success-overlay p { color: var(--clr-grey); }
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .about-image img { height: 320px; }
+
+  .recept-header { grid-template-columns: 1fr; }
+  .recept-img { height: 220px; width: 100%; }
+
+  .rezervacija-grid { grid-template-columns: 1fr; }
+
+  .recept-details-inner { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 700px) {
+  .hamburger { display: flex; }
+
+  .nav-links {
+    position: fixed;
+    inset: 60px 0 auto 0;
+    flex-direction: column;
+    background: var(--clr-navy);
+    padding: 1rem;
+    gap: 0.3rem;
+    transform: translateY(-110%);
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+
+  .nav-links.open { transform: translateY(0); }
+
+  .nav-links a { padding: 0.75rem 1rem; width: 100%; }
+
+  .form-row { grid-template-columns: 1fr; }
+
+  .hero-btns { flex-direction: column; align-items: flex-start; }
+}

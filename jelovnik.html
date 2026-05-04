@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jelovnik – Alkarski dvori</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAVIGACIJA -->
+  <header>
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">� Alkarski <span>dvori</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Otvori izbornik">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Početna</a></li>
+        <li><a href="jelovnik.html" class="active">Jelovnik</a></li>
+        <li><a href="recepti.html">Recepti</a></li>
+        <li><a href="rezervacija.html">Rezervacija</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Naš jelovnik</h1>
+      <p>Autentična dalmatinska jela i pića – tradicija Sinja na vašem tanjuru</p>
+    </div>
+  </section>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar">
+    <div class="container">
+      <div class="filter-inner">
+        <span class="filter-label">Filtriranje:</span>
+        <button class="filter-btn active" data-filter="sve">Sve</button>
+        <button class="filter-btn" data-filter="hrana">🥩 Hrana</button>
+        <button class="filter-btn" data-filter="pica">🍹 Pića</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MENU GRID -->
+  <section class="menu-section">
+    <div class="container">
+      <div class="menu-grid" id="menu-grid">
+
+        <!-- HRANA -->
+        <div class="menu-item card" data-category="hrana">
+          <img class="card-img"
+            src="img/peka.jpg" />
+          <div class="card-body">
+            <span class="card-badge badge-meso">Hrana</span>
+            <h3 class="card-title">Peka (teletina ili janjetina)</h3>
+            <p class="card-desc">Sporo pečeno meso s krumpirom i povrćem ispod peke – narudžba 24h unaprijed.</p>
+            <div class="card-footer">
+              <span class="card-price">18,00 €</span>
+              <small style="color:var(--clr-grey)">za osobu</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-item card" data-category="hrana">
+          <img class="card-img"
+            src="img/cevapi.jpg" />
+          <div class="card-body">
+            <span class="card-badge badge-meso">Hrana</span>
+            <h3 class="card-title">Ćevapi s lepinjom</h3>
+            <p class="card-desc">Sočni ćevapi posluženi uz domaću lepinju, luk i ajvar.</p>
+            <div class="card-footer">
+              <span class="card-price">10,00 €</span>
+              <small style="color:var(--clr-grey)">porcija</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-item card" data-category="hrana">
+          <img class="card-img"
+            src="img/prsut-sir.jpg" />
+          <div class="card-body">
+            <span class="card-badge badge-meso">Hrana</span>
+            <h3 class="card-title">Dalmatinski pršut i sir</h3>
+            <p class="card-desc">Tradicionalni pršut i domaći sir iz okolice Sinja – savršen uvod u obrok.</p>
+            <div class="card-footer">
+              <span class="card-price">12,00 €</span>
+              <small style="color:var(--clr-grey)">porcija</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-item card" data-category="hrana">
+          <img class="card-img"
+            src="img/pasticada2.jpg" />
+          <div class="card-body">
+            <span class="card-badge badge-meso">Hrana</span>
+            <h3 class="card-title">Pašticada s njokima</h3>
+            <p class="card-desc">Goveđe meso u bogatom umaku s domaćim njokima – nedjelja na tanjuru.</p>
+            <div class="card-footer">
+              <span class="card-price">16,00 €</span>
+              <small style="color:var(--clr-grey)">za osobu</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- PIĆA -->
+        <div class="menu-item card" data-category="pica">
+          <img class="card-img"
+            src="img/crno-vino.jpg" />
+          <div class="card-body">
+            <span class="card-badge badge-pica">Pića</span>
+            <h3 class="card-title">Crno vino (domaće)</h3>
+            <p class="card-desc">Odabrano domaće crno vino iz dalmatinskog zaleđa – puno i aromatично.</p>
+            <div class="card-footer">
+              <span class="card-price">5,00 €</span>
+              <small style="color:var(--clr-grey)">dcl</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-item card" data-category="pica">
+          <img class="card-img"
+            src="img/bijelo-vino.jpg" />
+          <div class="card-body">
+            <span class="card-badge badge-pica">Pića</span>
+            <h3 class="card-title">Bijelo vino</h3>
+            <p class="card-desc">Svježe i lagano, savršeno uz lagana jela i ljetne večeri.</p>
+            <div class="card-footer">
+              <span class="card-price">5,00 €</span>
+              <small style="color:var(--clr-grey)">dcl</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-item card" data-category="pica">
+          <img class="card-img"
+            src="img/pivo.jpg" />
+          <div class="card-body">
+            <span class="card-badge badge-pica">Pića</span>
+            <h3 class="card-title">Pivo</h3>
+            <p class="card-desc">Hladno osvježenje – točeno ili flaširanom.</p>
+            <div class="card-footer">
+              <span class="card-price">4,00 €</span>
+              <small style="color:var(--clr-grey)">0,5 l</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-item card" data-category="pica">
+          <img class="card-img"
+            src="img/sokovi.jpg" />
+          <div class="card-body">
+            <span class="card-badge badge-pica">Pića</span>
+            <h3 class="card-title">Prirodni sokovi</h3>
+            <p class="card-desc">Svježe cijedjeni sokovi od se zonskog voća – bez dodanih aditiva.</p>
+            <div class="card-footer">
+              <span class="card-price">3,00 €</span>
+              <small style="color:var(--clr-grey)">0,3 l</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-item card" data-category="pica">
+          <img class="card-img"
+            src="img/kava.jpg" />
+          <div class="card-body">
+            <span class="card-badge badge-pica">Pića</span>
+            <h3 class="card-title">Kava (espresso, cappuccino)</h3>
+            <p class="card-desc">Aromatična kava od odabranih kava premijum zrna – savršen kraj obroka.</p>
+            <div class="card-footer">
+              <span class="card-price">2,00 €</span>
+              <small style="color:var(--clr-grey)">šalica</small>
+            </div>
+          </div>
+        </div>
+
+
+      </div><!-- /menu-grid -->
+
+      <!-- No results msg -->
+      <p id="no-results" style="display:none;text-align:center;color:var(--clr-grey);padding:3rem 0;font-size:1.1rem;">
+        Nema jela u ovoj kategoriji.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>© 2026 <strong>Alkarski dvori</strong> · Sva prava pridržana</p>
+      <p style="margin-top:0.4rem;">Projektni zadatak · LTS Web tehnologije i analitika</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
