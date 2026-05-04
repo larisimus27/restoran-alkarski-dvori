@@ -37,6 +37,7 @@ body {
   background: var(--clr-cream);
   color: var(--clr-navy);
   line-height: 1.7;
+  overflow-x: hidden;
 }
 
 a {
